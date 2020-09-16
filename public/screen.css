@@ -24,6 +24,7 @@ headerBackground {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: 0rem 0.5rem 1.25rem rgba(0, 0, 0, 0.05);
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
 }
@@ -38,16 +39,11 @@ header {
 }
 
 nav {
-  padding-right: 1.25rem;
-  padding-left: 1.25rem;
-  padding-top: 0.7rem;
-  padding-bottom: 0.45rem;
 }
 
 header nav:first-child img {
-  width: 43px;
-  height: 43px;
-  padding-right: 0.25rem;
+  width: 32px;
+  height: 32px;
 }
 
 nav ul {
@@ -60,7 +56,6 @@ nav ul {
 }
 
 nav a {
-  padding-right: 1.1rem;
 }
 
 a {
@@ -70,7 +65,6 @@ a {
 
 octodex {
   font-weight: 600;
-  padding-right: 1.9rem;
   font-size: 1.1rem;
 }
 
@@ -85,35 +79,62 @@ a:hover {
 } */
 
 section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin-top: 6rem;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 article {
-  margin: 1rem;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+article > a {
+  background-color: #fff;
+  border: 1px;
+  border-color: #e1e4e8;
+  border-style: solid;
+  border-radius: 9px;
+  margin-bottom: 16px;
+}
+
+article > a img {
+  display: block;
+  width: 100%;
   max-width: 364px;
-  border: 1px;
-  border-style: dotted;
-  border-color: red;
+  height: auto;
+  border-radius: 9px;
+  top: 50%;
+  bottom: 50%;
+  left: 50%;
+  right: 50%;
 }
 
-article:first-child {
-  background-color: #fff;
-  object-fit: scale-down;
-  max-width: 100%;
-  height: auto;
-  border: 1px;
-  border-style: dotted;
-  border-color: green;
+@media all and (min-width: 405px) and (max-width: 804px) {
+  section {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-/* article img {
-  background-color: #fff;
-  object-fit: scale-down;
-  max-width: 100%;
-  height: auto;
-  border: 1px;
-  border-style: dotted;
-  border-color: red;
-} */
+@media all and (min-width: 805px) and (max-width: 1204px) {
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media all and (min-width: 1205px) {
+  section {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+article ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0rem;
+  margin: 0rem;
+}
